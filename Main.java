@@ -4,7 +4,7 @@ public class Main {
 
 
         System.out.println("--- Configuración de cubos de prueba ---");
-        gestor.poblarLista(3);
+        gestor.añadirLista(3);
 
         System.out.println("\n--- Ordenando cubos por tamaño ---");
         gestor.ordenarPorTamaño();
