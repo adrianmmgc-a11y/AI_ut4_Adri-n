@@ -8,7 +8,7 @@ public class GestorCubos {
 
     private List<Cubo> listaDeCubos = new ArrayList<>();
 
-    public void poblarLista(int cantidad) {
+    public void añadirLista(int cantidad) {
         for (int i = 0; i < cantidad; i++) {
             float lado = Cubo.solicitarLado();
             listaDeCubos.add(new Cubo(lado));
