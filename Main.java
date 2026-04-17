@@ -1,29 +1,25 @@
-package ofuscado;
-
-
-/** Metodo rebuscado para sumar hasta 100 con un bucle do while.
- * Antes ofuscado, ya refactorizado.
- */
 public class Main {
-	public static void main(final String[] args) {
-		int contadorfinal = 0;
-		int incremento = 15;
-		int sumaalcontador = 20;
-		int contador = 0;
-		do {
-			sumaalcontador = 10 + incremento;
-			contador = contador + sumaalcontador;
-			contador++;
-			if (contador < 10) {
-				contadorfinal = 15;
-				contador = contador - 1;
-			} else {
-				contadorfinal = 10;
-				contador = contador - 1;
-			}
-			int aux;
-			aux = contador;
-			contadorfinal = aux;
-		} while (contador < 100);
-	}
+    public static void main(String[] args) {
+        GestorCubos gestor = new GestorCubos();
+
+
+        System.out.println("--- Configuración de cubos de prueba ---");
+        gestor.poblarLista(3);
+
+        System.out.println("\n--- Ordenando cubos por tamaño ---");
+        gestor.ordenarPorTamaño();
+        for (Cubo c : gestor.getListaDeCubos()) {
+            System.out.println("Cubo con lado: " + c.getLado() + " | Volumen: " + c.calcularVolumen());
+        }
+
+        System.out.println("\n--- Comprobando si el primer cubo cabe en el segundo ---");
+        if (gestor.getListaDeCubos().size() >= 2) {
+            Cubo c1 = gestor.getListaDeCubos().get(0);
+            Cubo c2 = gestor.getListaDeCubos().get(1);
+            
+            boolean cabe = gestor.cabeElPrimeroEnElSegundo(c1, c2);
+            
+            System.out.println("¿El cubo de lado " + c1.getLado() + " cabe en el de lado " + c2.getLado() + "?: " + (cabe ? "Si" : "No"));
+        }
+    }
 }
