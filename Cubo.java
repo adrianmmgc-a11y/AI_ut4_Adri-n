@@ -1,4 +1,3 @@
-package ofuscado;
 import javax.swing.JOptionPane;
 
 /**
@@ -7,7 +6,7 @@ import javax.swing.JOptionPane;
  * @author Adrián José Martínez Medina
  * @version 1.0
  */
-public class Cubo {
+public class Cubo implements Comparable<Cubo>{
 
     private float lado;
 
@@ -78,7 +77,12 @@ public class Cubo {
     public void imprimirVolumen() {
         JOptionPane.showMessageDialog(null, "El volumen del cubo es: " + calcularVolumen());
     }
-
+     
+    @Override
+        public int compareTo(Cubo otro) {
+        return Float.compare(this.lado, otro.getLado());
+    }
+    
     /**
      * Método principal para ejecutar la aplicación.
      * Crea tres cubos y determina cuál es el más grande.
