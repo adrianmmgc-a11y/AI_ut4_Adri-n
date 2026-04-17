@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Adrián José Martínez Medina
  * @version 1.0
  */
-public class Cubo {
+public class Cubo implements Comparable<Cubo>{
 
     private float lado;
 
@@ -64,6 +64,12 @@ public class Cubo {
             return 0;
         }
     }
+
+    
+    @Override
+	public int compareTo(Cubo o) {
+		return Float.compare(this.lado, o.getLado());
+    };
 
     /**
      * Muestra el área de la base en una ventana de diálogo.
